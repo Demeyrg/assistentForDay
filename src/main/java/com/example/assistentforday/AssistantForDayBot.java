@@ -1,8 +1,10 @@
 package com.example.assistentforday;
 
-import com.example.assistentforday.service.*;
+import com.example.assistentforday.service.CommandHandlerService;
+import com.example.assistentforday.service.CurrencyService;
+import com.example.assistentforday.service.TextHandlerService;
+import com.example.assistentforday.service.WeatherService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -12,7 +14,6 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 @Component
-@PropertySource("classpath:text.properties")
 public class AssistantForDayBot extends TelegramLongPollingBot {
 
     @Autowired
